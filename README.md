@@ -1,7 +1,7 @@
 About
 =====
 
-This is a C# interpretation of Raganwald's [`andand`][1].
+This is a C# interpretation of Raganwald's [`andand`][1]. It provides a so-called *guarded method invocation* or *safe navigation method*. In other words, you can be blissfully ignorant of any null references when resolving a chain of member accesses, as in `foo.bar.baz`. With `AndAnd`, if `foo` or `foo.bar` resulted in a null reference, a `null` ref would be returned instead of throwing a `NullReferenceException`. Without `AndAnd`, you would have to verify that both `foo` and `foo.bar` result in a non-null reference, otherwise a `NullReferenceException` would be thrown upon invoking `foo.bar` and `foo.bar.baz`, respectively.
 
 Usage
 =====
